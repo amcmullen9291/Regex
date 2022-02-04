@@ -1,3 +1,3 @@
 # Regex
 
-A simple app to read supplied regular expressions
+A simple app to read supplied <i>basic </i> regular expressions
