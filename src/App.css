@@ -6,7 +6,7 @@ h1{
 
 #charClass{
     position:absolute;
-    background-color: yellow;
+    background-color: #FFE4CD;
     margin-left: 50%;
     transform: translateX(-51%);
     border:.2em dashed #ff8c69;
@@ -32,8 +32,8 @@ input{
 }
 
 body{
-    background-color: blue;
-    border:2em solid #ff8c69;
+    background-color: black;
+    border:2em solid #E97451;
     height: 100vh;
 }
 
@@ -46,3 +46,29 @@ body{
     color: white;
 }
 
+.entries span{
+    color: #253529;
+    font-size: 1.5em;
+}
+
+.entries span:nth-child(2n){
+    color: black;
+    font-size: 18px;
+}
+.regexHeading{
+    color: black;
+}
+
+#headingTop{
+    color: white;
+}
+
+#bottomDiv{
+    background-color: white;
+    z-index: 0;
+    position: absolute;
+    bottom:0;
+    height: 20vh;
+    width: 83vw;
+    margin-left: 5%;
+}
