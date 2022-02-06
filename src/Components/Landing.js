@@ -30,7 +30,7 @@ export default function Landing() {
 //    searchTerm += enteredExpression[enteredExpression.length -1])
 // }
 //... and if it does contain an expression, set serach term  (searchterm, setSearchterm)
-//also need to set the "n" in the constants to accept any number
+//also need to set the "n"s in the constants to accept any number
 
 
   return (
