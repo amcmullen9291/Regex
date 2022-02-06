@@ -24,11 +24,13 @@ export default function Landing() {
     console.log(enteredExpression[enteredExpression.length -1]);
     //reads last character from input
 }
- //something like let searchTermIndex = -1;
- //let searchterm = "";
+ //something like
+ //let searchterm = "";  (need to set constant)
  //while((!charClasses.includes(enteredExpression[enteredExpression.length -1])) && (!quantifers.includes(enteredExpression[enteredExpression.length -1]) && (!charClasses.includes(enteredExpression[enteredExpression.length -1])){
 //    searchTerm += enteredExpression[enteredExpression.length -1])
 // }
+//... and if it does contain an expression, set serach term  (searchterm, setSearchterm)
+//also need to set the "n" in the constants to accept any number
 
 
   return (
