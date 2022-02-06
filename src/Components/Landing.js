@@ -24,6 +24,12 @@ export default function Landing() {
     console.log(enteredExpression[enteredExpression.length -1]);
     //reads last character from input
 }
+ //something like let searchTermIndex = -1;
+ //let searchterm = "";
+ //while((!charClasses.includes(enteredExpression[enteredExpression.length -1])) && (!quantifers.includes(enteredExpression[enteredExpression.length -1]) && (!charClasses.includes(enteredExpression[enteredExpression.length -1])){
+//    searchTerm += enteredExpression[enteredExpression.length -1])
+// }
+
 
   return (
       <>
