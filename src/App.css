@@ -33,9 +33,11 @@ input{
 
 body{
     background-color: grey;
-    border:2em inset #E97451;
-    border-style: solid double none;
+    border:2em inset #E77200;
+    border-style: hidden double none;
     height: 100vh;
+    border-left:2em double #E97451;
+    border-right:2em double #E97451;
 }
 
 #translatedArea{
