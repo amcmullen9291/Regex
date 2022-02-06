@@ -1,4 +1,48 @@
 
-hr{
-    border-bottom: 2px dashed red;
+h1{
+    color: antiquewhite;
+    margin-left: 2%;
 }
+
+#charClass{
+    position:absolute;
+    background-color: yellow;
+    margin-left: 50%;
+    transform: translateX(-51%);
+    border:.2em dashed #ff8c69;
+    font-size: 1.5em;
+    width:750px;
+}
+
+input{
+    background-color: pink;
+    width: 500px;
+    height: 30px;
+    text-align: center; 
+}
+
+.regexHeading{
+    color:red;
+}
+
+#inputArea{
+    position: absolute;
+    top:65%;
+    transform: translateX(-45%);
+}
+
+body{
+    background-color: blue;
+    border:2em solid #ff8c69;
+    height: 100vh;
+}
+
+#translatedArea{
+    position: absolute;
+    top:75%;
+    margin-left:25%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    color: white;
+}
+
