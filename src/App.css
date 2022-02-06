@@ -32,8 +32,9 @@ input{
 }
 
 body{
-    background-color: black;
-    border:2em solid #E97451;
+    background-color: grey;
+    border:2em inset #E97451;
+    border-style: solid double none;
     height: 100vh;
 }
 
@@ -76,7 +77,9 @@ body{
 }
 
 #resetButton{
-    background-color: yellow;
+    background-color: #FFDB00;
     margin-left: 2%;
-    font-size: 3em;
+    font-size: 2em;
+    border-radius: 15%;
+    color: #832A0D;
 }

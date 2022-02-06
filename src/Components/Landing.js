@@ -47,7 +47,7 @@ function resetRegex(e){
   </div>
 <center>
   <form>
-    <input id="inputArea" type="text" onInput={(e) => {findTranslation(e)}} placeholder="Regular Expressions" autoComplete='off'/>
+    <input id="inputArea" type="text" onInput={(e) => {findTranslation(e)}} placeholder="Regular Expression" autoComplete='off'/>
   </form>
 </center>
 <br/>
