@@ -22,7 +22,7 @@ export default function Landing() {
     document.getElementById('RegexTranslated').innerHTML = enteredExpression;
     setTranslation(enteredExpression);
     console.log(enteredExpression[enteredExpression.length -1]);
-    //reads last input from translate
+    //reads last character from input
 }
 
   return (
