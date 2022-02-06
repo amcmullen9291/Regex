@@ -68,7 +68,15 @@ body{
     z-index: 0;
     position: absolute;
     bottom:0;
-    height: 20vh;
-    width: 83vw;
-    margin-left: 5%;
+    height: 18vh;
+    width: 50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+}
+
+#resetButton{
+    background-color: yellow;
+    margin-left: 2%;
+    font-size: 3em;
 }
