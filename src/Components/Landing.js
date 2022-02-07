@@ -15,7 +15,7 @@ export default function Landing() {
 
   const definitionsHTMLCharClass = ["placeholder" , "Matches the first occurance of either term 'x' or term 'y'.", "A wildcard; this matches any single character. However, inside square brackets, it matches a literal dot or period."];
   const definitionsAssertions = ["placeholder", "Outside of square brackets, a caret looks for matches at the beginning of a string. Inside square brackets, and caret matches values NOT equal to the given filter."];
-  const definitionsQuantifiers = [ "placeholder" , "The asterisk will look for the preceding term 0 or more times. note: multiple letter have to appear in the searched string in the same order as the entered regex filter value." ];
+  const definitionsQuantifiers = [ "placeholder" , "The asterisk will look for the preceding term 0 or more times. Note: if multiple letters are searched for they will have to appear in the searched string in the same order as the entered regex filter value. The required order does not consider letter frequency; only the order." ];
 
   const HTMLCharClasses = [ < span key={"2"} onClick={(e) => {define(e, "2")}}>. </span>, <span>, </span>, < span key={"4"}>\d </span>,<span>, </span>, < span key={"5"}>\D </span>,<span>, </span>, < span key={"7"}>\n </span>,<span>, </span>, < span key={"8"}>\r </span>,<span>, </span>, < span key={"9"}>\s </span>,<span>, </span>, < span key={"10"}>\S </span>,<span>, </span>, < span key={"11"}>\t </span>,<span>, </span>, < span key={"13"}>\w </span>,<span>, </span>, < span key={"14"}>\W </span>,<span>, </span>, < span key={"15"}>\0 </span>,<span>, </span>, < span key={"16"}>[^  ]</span>, <span>,</span>,< span key={"17"}>[x-y]</span> , <span>, </span>, < span key={"1"} onClick={(e) => {define(e, "1")}}>[x|y]</span>]
   const HTMLAssertions = [< span key={"1"} onClick={(e) => {define2(e, "1")}}>^</span>, <span>, </span>,< span key={"2"}>$</span>, <span>, </span>,< span key={"3"}>\b</span>, <span>, </span>,< span key={"4"}>\B</span> ];
@@ -126,7 +126,7 @@ function define3 (e, index){  //quantifiers definitions
   \{translation}{endOfQuerySlash}{endOfQuery}
   </div>
   </center>
-  <div id="bottomDiv">translation goes here</div>
+  <div id="bottomDiv">Click on an expression for its definition.</div>
   <button id="resetButton" onClick={(e) => {resetRegex(e)}}>reset</button>
   </>
   );

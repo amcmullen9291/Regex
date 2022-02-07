@@ -37,6 +37,7 @@ body{
     border-style: hidden none none none;
     height: 100vh;
     border-left:2em double #E97451;
+    cursor: pointer;
 }
 
 #translatedArea{
@@ -126,5 +127,7 @@ body{
     font-size: 60px;
 }
 
-
+.entries:hover{
+    cursor: pointer;
+}
 
