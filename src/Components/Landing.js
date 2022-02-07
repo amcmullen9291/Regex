@@ -7,15 +7,15 @@ export default function Landing() {
   let [explination, setExplination ] = useState(null);
   const backslash = String.raw` \ `;
 
-  const charClasses = [ backslash, ".", "\\cX", "\\d", "\\D", "\\f", "\\n", "\\r", "\\s", "\\S", "\\t", "\\v", "\\w", "\\W", "\\0", "[^]"];
-  const assertions = ["^", "$", "\\b", "\\B"]
+  const charClasses = [ backslash, ".", "\\d", "\\D", "\\n", "\\r", "\\s", "\\S", "\\t", "\\w", "\\W", "\\0", "[^]"];
+  const assertions = ["^", "$", "\\b", "\\B", "|" ]
   const quantifiers = ["*", "+", "?", "x{n}", "x{n,}", "x{n,m}"];
   const flags = ["i", "g" ]; 
   //for .includes() method
 
-  const HTMLCharClasses = [ < span key={"1"}>{backslash}</span>, <span>, </span>, < span key={"2"}>. </span>, <span>, </span>, < span key={"3"}>\cX </span>,<span>, </span>, < span key={"4"}>\d </span>,<span>, </span>, < span key={"5"}>\D </span>,<span>, </span>, < span key={"6"}>\f </span>,<span>, </span>, < span key={"7"}>\n </span>,<span>, </span>, < span key={"8"}>\r </span>,<span>, </span>, < span key={"9"}>\s </span>,<span>, </span>, < span key={"10"}>\S </span>,<span>, </span>, < span key={"11"}>\t </span>,<span>, </span>, < span key={"12"}>\v </span>,<span>, </span>, < span key={"13"}>\w </span>,<span>, </span>, < span key={"14"}>\W </span>,<span>, </span>, < span key={"15"}>\0 </span>,<span>, </span>, < span key={"16"}>[^  ] </span>]
-  const HTMLAssertions = [< span key={"1"}>^</span>, <span>, </span>,< span key={"2"}>$</span>, <span>, </span>,< span key={"3"}>\b</span>, <span>, </span>,< span key={"4"}>\B</span>, <span>, </span>,< span key={"5"}>|</span> ];
-  const HTMLQuantifiers = [< span key={"1"}>*</span>, <span>, </span>,< span key={"2"}>+</span>, <span>, </span>,< span key={"3"}>?</span>, <span>, </span>,< span key={"4"}>x&#x007B;n&#x007D;</span>, <span>, </span>,< span key={"5"}>x&#x007B;n,_&#x007D;</span>, <span>, </span>,< span key={"6"}>x&#x007B;n,m&#x007D;</span> ];
+  const HTMLCharClasses = [ < span key={"1"}>{backslash}</span>, <span>, </span>, < span key={"2"}>. </span>, <span>, </span>, < span key={"4"}>\d </span>,<span>, </span>, < span key={"5"}>\D </span>,<span>, </span>, < span key={"7"}>\n </span>,<span>, </span>, < span key={"8"}>\r </span>,<span>, </span>, < span key={"9"}>\s </span>,<span>, </span>, < span key={"10"}>\S </span>,<span>, </span>, < span key={"11"}>\t </span>,<span>, </span>, < span key={"13"}>\w </span>,<span>, </span>, < span key={"14"}>\W </span>,<span>, </span>, < span key={"15"}>\0 </span>,<span>, </span>, < span key={"16"}>[^  ] </span>]
+  const HTMLAssertions = [< span key={"1"}>^</span>, <span>, </span>,< span key={"2"}>$</span>, <span>, </span>,< span key={"3"}>\b</span>, <span>, </span>,< span key={"4"}>\B</span> ];
+  const HTMLQuantifiers = [< span key={"1"}>*</span>, <span>, </span>,< span key={"2"}>+</span>, <span>, </span>,< span key={"3"}>?</span>, <span>, </span>,< span key={"7"}>|</span> , <span>, </span>,< span key={"4"}>x&#x007B;n&#x007D;</span>, <span>, </span>,< span key={"5"}>x&#x007B;n,_&#x007D;</span>, <span>, </span>,< span key={"6"}>x&#x007B;n,m&#x007D;</span> ];
 
 
   const endOfQuery = ":";
@@ -42,7 +42,7 @@ function resetRegex(e){
 function ignoreCase(e){
     e.preventDefault();
     let repetitionButton = document.getElementById("repetition");
-    if(repetitionButton.checked || repetitionButton.disabled == true){
+    if(repetitionButton.checked || repetitionButton.disabled === true){
     setEndOfQuerySlash("\\ig");
   }else{
   setEndOfQuerySlash("\\i");
@@ -53,7 +53,7 @@ function ignoreCase(e){
 function lookForRepeat(e){
   e.preventDefault();
     let ignoreCaseButton = document.getElementById("ignoreCase");
-    if(ignoreCaseButton.checked || ignoreCaseButton.disabled == true){
+    if(ignoreCaseButton.checked || ignoreCaseButton.disabled === true){
     setEndOfQuerySlash("\\ig");
   }else{
   setEndOfQuerySlash("\\g");
