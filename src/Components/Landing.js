@@ -13,11 +13,13 @@ export default function Landing() {
   const flags = ["i", "g" ]; 
   //for .includes() method
 
-  const definitionsHTMLCharClass = ["placeholder" , "Matches the first occurance of either term 'x' or term 'y'.", "A wildcard; This matches any single character. However, inside square brackets, it matches a literal dot or period."]
+  const definitionsHTMLCharClass = ["placeholder" , "Matches the first occurance of either term 'x' or term 'y'.", "A wildcard; this matches any single character. However, inside square brackets, it matches a literal dot or period."];
+  const definitionsAssertions = ["placeholder", "Outside of square brackets, a caret looks for matches at the beginning of a string. Inside square brackets, and caret matches values NOT equal to the given filter."];
+  const definitionsQuantifiers = [ "placeholder" , "The asterisk will look for the preceding term 0 or more times. note: multiple letter have to appear in the searched string in the same order at the regex filter value." ];
 
   const HTMLCharClasses = [ < span key={"2"} onClick={(e) => {define(e, "2")}}>. </span>, <span>, </span>, < span key={"4"}>\d </span>,<span>, </span>, < span key={"5"}>\D </span>,<span>, </span>, < span key={"7"}>\n </span>,<span>, </span>, < span key={"8"}>\r </span>,<span>, </span>, < span key={"9"}>\s </span>,<span>, </span>, < span key={"10"}>\S </span>,<span>, </span>, < span key={"11"}>\t </span>,<span>, </span>, < span key={"13"}>\w </span>,<span>, </span>, < span key={"14"}>\W </span>,<span>, </span>, < span key={"15"}>\0 </span>,<span>, </span>, < span key={"16"}>[^  ]</span>, <span>,</span>,< span key={"17"}>[x-y]</span> , <span>, </span>, < span key={"1"} onClick={(e) => {define(e, "1")}}>[x|y]</span>]
-  const HTMLAssertions = [< span key={"1"}>^</span>, <span>, </span>,< span key={"2"}>$</span>, <span>, </span>,< span key={"3"}>\b</span>, <span>, </span>,< span key={"4"}>\B</span> ];
-  const HTMLQuantifiers = [< span key={"1"}>*</span>, <span>, </span>,< span key={"2"}>+</span>, <span>, </span>,< span key={"3"}>?</span>, <span>, </span>,< span key={"4"}>x&#x007B;n&#x007D;</span>, <span>, </span>,< span key={"5"}>x&#x007B;n,_&#x007D;</span>, <span>, </span>,< span key={"6"}>x&#x007B;n,m&#x007D;</span> ];
+  const HTMLAssertions = [< span key={"1"} onClick={(e) => {define2(e, "1")}}>^</span>, <span>, </span>,< span key={"2"}>$</span>, <span>, </span>,< span key={"3"}>\b</span>, <span>, </span>,< span key={"4"}>\B</span> ];
+  const HTMLQuantifiers = [< span key={"1"} onClick={(e) => {define3(e, "1")}}>*</span>, <span>, </span>,< span key={"2"}>+</span>, <span>, </span>,< span key={"3"}>?</span>, <span>, </span>,< span key={"4"}>x&#x007B;n&#x007D;</span>, <span>, </span>,< span key={"5"}>x&#x007B;n,_&#x007D;</span>, <span>, </span>,< span key={"6"}>x&#x007B;n,m&#x007D;</span> ];
 
 
   const endOfQuery = ":";
@@ -38,6 +40,7 @@ function resetRegex(e){
   document.getElementById("inputArea").value = "";
   document.getElementById("ignoreCase").disabled = false;
   document.getElementById("repetition").disabled = false;
+  document.getElementById("bottomDiv").innerHTML = "translation goes here";
   setEndOfQuerySlash("\\");
 }
 
@@ -63,10 +66,22 @@ function lookForRepeat(e){
   document.getElementById("repetition").disabled = true;
 }
 
-function define (e, index){
+function define (e, index){  //CharClass definitions
   e.preventDefault();
   e.target.style.color = "red";
   document.getElementById("bottomDiv").innerHTML = definitionsHTMLCharClass[index];
+}
+
+function define2 (e, index){  //Assertions definitions
+  e.preventDefault();
+  e.target.style.color = "red";
+  document.getElementById("bottomDiv").innerHTML = definitionsAssertions[index];
+}
+
+function define3 (e, index){  //quantifiers definitions
+  e.preventDefault();
+  e.target.style.color = "red";
+  document.getElementById("bottomDiv").innerHTML = definitionsQuantifiers[index];
 }
 
  //something like
