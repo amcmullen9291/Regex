@@ -63,6 +63,9 @@ body{
 
 #headingTop{
     color: white;
+    position: fixed;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 #bottomDiv{
@@ -113,11 +116,13 @@ body{
 }
 
 #optionLabel{
-    position:absolute;
+    position: fixed;
+    top: 70%;
     bottom: 0;
+    right:0;
     margin-bottom: 35%;
     margin-left:50%;
-    transform: translateX(-50%);
+    transform: translateX(-30%);
     font-size: 60px;
 }
 
