@@ -4,7 +4,9 @@ import { useState } from 'react';
 export default function Landing() {
 
   let [ translation, setTranslation ] = useState(null);
-  let [explination, setExplination ] = useState(null);
+  let [explination, setExplination ] = useState(null);  //words of explination
+  let [ enteredExpression, setEnteredExpression ] = useState(null); // search value
+
   const backslash = String.raw` \ `;
 
   const charClasses = [ backslash, ".", "\\d", "\\D", "\\n", "\\r", "\\s", "\\S", "\\t", "\\w", "\\W", "\\0", "[^]"];

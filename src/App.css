@@ -177,11 +177,11 @@ body{
     background-color: #ff8c69;
     text-align: start;
     padding: 1%;
-    animation: fadeIn 4s;
-  -webkit-animation: fadeIn 4s;
-  -moz-animation: fadeIn 4s;
-  -o-animation: fadeIn 4s;
-  -ms-animation: fadeIn 4s;
+    animation: fadeIn 4s, flashing 3s;
+  -webkit-animation: fadeIn 4s, flashing 3s;
+  -moz-animation: fadeIn 4s, flashing 3s;
+  -o-animation: fadeIn 4s, flashing 3s;
+  -ms-animation: fadeIn 4s, flashing 3s;
 }
 
 @keyframes fadeIn {
@@ -208,3 +208,23 @@ body{
     0% {opacity:0;}
     100% {opacity:1;}
   }
+  @keyframes flashing {
+    0% {
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 0;
+    }
+    60%{
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
