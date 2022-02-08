@@ -155,10 +155,10 @@ body{
     height: 20vh;
     /* border: 1px solid black; */
     width: 10vw;
-    margin-top: 10%;
+    margin-top: 1%;
     margin-left: 2%;
     position:relative;
-    font-size: 26px;
+    font-size: 22px;
     background-color: #ff8c69;
     text-align: start;
     padding: 1%;
@@ -170,18 +170,18 @@ body{
     height: 20vh;
     /* border: 1px solid black; */
     width: 10vw;
-    margin-top: 10%;
+    margin-top: 1%;
     margin-left: 2%;
     position:relative;
-    font-size: 26px;
+    font-size: 22px;
     background-color: #ff8c69;
     text-align: start;
     padding: 1%;
-    animation: fadeIn 3s;
-  -webkit-animation: fadeIn 3s;
-  -moz-animation: fadeIn 3s;
-  -o-animation: fadeIn 3s;
-  -ms-animation: fadeIn 3s;
+    animation: fadeIn 4s;
+  -webkit-animation: fadeIn 4s;
+  -moz-animation: fadeIn 4s;
+  -o-animation: fadeIn 4s;
+  -ms-animation: fadeIn 4s;
 }
 
 @keyframes fadeIn {

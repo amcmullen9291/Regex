@@ -22,7 +22,7 @@ export default function Landing() {
   const HTMLQuantifiers = [< span key={"1"} onClick={(e) => {define3(e, "1")}}>*</span>, <span>, </span>,< span key={"2"}>+</span>, <span>, </span>,< span key={"3"}>?</span>, <span>, </span>,< span key={"4"}>x&#x007B;n&#x007D;</span>, <span>, </span>,< span key={"5"}>x&#x007B;n,_&#x007D;</span>, <span>, </span>,< span key={"6"}>x&#x007B;n,m&#x007D;</span>,<span>,</span>,< span key={"7"}>-g</span> ];
 
 
-  const endOfQuery = ":";
+  const endOfQuery = " :";
   let [ endOfQuerySlash, setEndOfQuerySlash ] = useState("\\");
 
   function findTranslation(e){
@@ -134,7 +134,7 @@ function define3 (e, index){  //quantifiers definitions
   </div>
 
   <button id="resetButton" onClick={(e) => {resetRegex(e)}}>reset</button>
-  <p id="sideNotes-Int">A global modifier match finds <i>all</i> matches (including matches that have a prefix or a suffix).</p>
+  <p id="sideNotes-Int">A global modifier finds <i>all</i> matches (including matches that have a prefix or a suffix).</p>
   </>
   );
 }
