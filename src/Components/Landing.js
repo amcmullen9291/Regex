@@ -64,6 +64,8 @@ function lookForRepeat(e){
   setEndOfQuerySlash("\\g");
   }
   document.getElementById("repetition").disabled = true;
+  let notes = document.getElementById("sideNotes-Int");
+  notes.id = "sideNotes";
 }
 
 function define (e, index){  //CharClass definitions
@@ -132,6 +134,7 @@ function define3 (e, index){  //quantifiers definitions
   </div>
 
   <button id="resetButton" onClick={(e) => {resetRegex(e)}}>reset</button>
+  <p id="sideNotes-Int">A global modifier match finds <i>all</i> matches (including matches that have a prefix or a suffix).</p>
   </>
   );
 }

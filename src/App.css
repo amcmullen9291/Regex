@@ -149,4 +149,62 @@ body{
 .entries:hover{
     cursor: pointer;
 }
+#sideNotes-Int{
+    visibility: hidden;
+    color: #253529;
+    height: 20vh;
+    /* border: 1px solid black; */
+    width: 10vw;
+    margin-top: 10%;
+    margin-left: 2%;
+    position:relative;
+    font-size: 26px;
+    background-color: #ff8c69;
+    text-align: start;
+    padding: 1%;
+}
 
+
+#sideNotes{
+    color: #253529;
+    height: 20vh;
+    /* border: 1px solid black; */
+    width: 10vw;
+    margin-top: 10%;
+    margin-left: 2%;
+    position:relative;
+    font-size: 26px;
+    background-color: #ff8c69;
+    text-align: start;
+    padding: 1%;
+    animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+  -moz-animation: fadeIn 3s;
+  -o-animation: fadeIn 3s;
+  -ms-animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
