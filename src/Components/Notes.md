@@ -1,7 +1,7 @@
 # Notes:
 
 cases:
-## a single search term with no regex  (add "looking specifically foe first occurance of..." to starting backslash)
+## a single search term with no regex  (add "looking specifically for first occurance of..." to starting backslash)
 ## looking for more than one term with no regex
 
 ## if 'repetition' checkbox selected say search will find all occurances

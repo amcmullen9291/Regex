@@ -74,12 +74,31 @@ body{
     z-index: 0;
     position: absolute;
     bottom:0;
-    height: 18vh;
+    margin-bottom: 9vh;
+    height: 9vh;
     width: 50%;
     margin-left: 50%;
     transform: translateX(-50%);
+    border-bottom: 1px dashed gray;
+    background-color: khaki;
 
 }
+#bottomDiv2{
+    background-color: white;
+    z-index: 0;
+    position: absolute;
+    bottom:0;
+    height: 9vh;
+    width: 50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+#bottomDiv2Translate{
+    align-self: flex-end;
+}
+
 
 #resetButton{
     background-color: #FFDB00;

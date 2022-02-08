@@ -40,7 +40,7 @@ function resetRegex(e){
   document.getElementById("inputArea").value = "";
   document.getElementById("ignoreCase").disabled = false;
   document.getElementById("repetition").disabled = false;
-  document.getElementById("bottomDiv").innerHTML = "translation goes here";
+  document.getElementById("bottomDiv").innerHTML = " ";
   setEndOfQuerySlash("\\");
 }
 
@@ -127,6 +127,10 @@ function define3 (e, index){  //quantifiers definitions
   </div>
   </center>
   <div id="bottomDiv">Click on an expression for its definition.</div>
+  <div id="bottomDiv2">
+    <div id="bottomDiv2Translate">Translation goes here.</div>
+  </div>
+
   <button id="resetButton" onClick={(e) => {resetRegex(e)}}>reset</button>
   </>
   );
