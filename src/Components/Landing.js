@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Landing() {
 
@@ -12,7 +12,6 @@ export default function Landing() {
   const charClasses = [ backslash, ".", "\\d", "\\D", "\\n", "\\r", "\\s", "\\S", "\\t", "\\w", "\\W", "\\0", "[^]"];
   const assertions = ["^", "$", "\\b", "\\B", "|" ]
   const quantifiers = ["*", "+", "?", "x{n}", "x{n,}", "x{n,m}"];
-  const flags = ["i", "g" ]; 
   //for .includes() method
 
   const definitionsHTMLCharClass = ["placeholder" , "Matches the first occurance of either term 'x' or term 'y'.", "A wildcard; this matches any single character. However, inside square brackets, it matches a literal dot or period.", "", "This expression will match any digit. It is equivalent to the Character Case expression [0-9].", "This expression matches any character that is not a digit. It is equivalent to Character Case expression [^0-9].", "", "This expression looks for the character used to signify the end of a line of text and the start of a new line which is ' \\n '.", "This expression looks for the control character used to reset a cursor's position to the beginning of a line of text (like when you use the return key)."];
@@ -32,8 +31,6 @@ export default function Landing() {
     let enteredExpression = document.getElementById("inputArea").value;
     document.getElementById('RegexTranslated').innerHTML = enteredExpression;
     setTranslation(enteredExpression);
-    console.log(enteredExpression[enteredExpression.length -1]);
-    //reads last character from input
 }
 
 function resetRegex(e){
@@ -88,6 +85,16 @@ function define3 (e, index){  //quantifiers definitions
   document.getElementById("bottomDiv").innerHTML = definitionsQuantifiers[index];
 }
 
+useEffect(() => {
+  readInputIndexbyIndex();
+}, [translation]);
+
+function readInputIndexbyIndex(){
+    if(document.getElementById("inputArea").value != null){
+      let enteredExpression = document.getElementById("inputArea").value;
+      console.log(enteredExpression[enteredExpression.length -1]);
+  }
+}
  //something like
  //let searchterm = "";  (need to set constant)
  //while((!charClasses.includes(enteredExpression[enteredExpression.length -1])) && (!quantifers.includes(enteredExpression[enteredExpression.length -1]) && (!charClasses.includes(enteredExpression[enteredExpression.length -1])){

@@ -8,7 +8,7 @@ cases:
 
 ##  CharacterCase [a-z]
 ##  CharacterCase [firstNumber- secondNumber]
-##  CharacterCase looking for number and letter ranges]
+##  CharacterCase [looking for number and letter ranges]
 ## CharacterCase NOT [^  ]
 ## Wildcard character
 ## zero or more occurances (*)
