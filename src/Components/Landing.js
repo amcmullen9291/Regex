@@ -36,13 +36,13 @@ export default function Landing() {
         if(enteredExpression.length < 1 ){
           console.log("right area");
           setTranslation(); 
-          setInputLength();
+          setInputLength(0);
         }else{
-          setTranslation();
+          // setTranslation();
         setTranslation(translation.slice(0, -1));
-        setInputLength(inputLength -= 1);
-        console.log(enteredExpression);
-        console.log("input length: ", inputLength);
+        setInputLength(enteredExpression.length);
+        console.log(enteredExpression.length);
+        console.log("input length: ", enteredExpression.length);
       }
       }else{
         setTranslation(translation += enteredExpression[enteredExpression.length-1]);
@@ -102,11 +102,11 @@ function define (e, index){  //CharClass definitions
   if(translation != null){
   setTranslation(translation + enteredExpression);
   document.getElementById("inputArea").value = "";
-  setInputLength();
+  setInputLength(0);
 }else{
   setTranslation(enteredExpression);
   document.getElementById("inputArea").value ="";
-  setInputLength();
+  setInputLength(0);
 }
 }
 
