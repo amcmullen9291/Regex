@@ -143,7 +143,6 @@ function readInputIndexbyIndex(){  //not needed
       console.log(enteredExpression[enteredExpression.length -1]);
   }
 }
-
   return (
       <>
   <div>
