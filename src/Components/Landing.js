@@ -6,6 +6,7 @@ export default function Landing() {
   let [ translation, setTranslation ] = useState(null);
   let [explination, setExplination ] = useState(null);  //words of explination
   let [ enteredExpression, setEnteredExpression ] = useState(null); // search value
+  let [ inputLength, setInputLength ] = useState(1);
 
   const backslash = String.raw` \ `;
 
@@ -31,7 +32,23 @@ export default function Landing() {
     let enteredExpression = document.getElementById("inputArea").value;
     console.log( "current translation value: ", translation);
     if(translation != null){
-      setTranslation(translation += enteredExpression[enteredExpression.length-1]);
+      if(enteredExpression.length < inputLength){
+        if(enteredExpression.length == 0){
+          setTranslation();
+        }else{
+        // enteredExpression = document.getElementById("inputArea").value;
+        setTranslation(translation += enteredExpression[enteredExpression.length-1]);
+        setInputLength(inputLength -= 1);
+        console.log(enteredExpression);
+        console.log("input length: ", inputLength);
+      }
+      }else{
+        setTranslation(translation += enteredExpression[enteredExpression.length-1]);
+        setInputLength(inputLength+=1);
+        console.log(enteredExpression);
+        console.log("input length: ", inputLength);
+
+      }
     }
     if(translation == null){
       setTranslation(enteredExpression);
