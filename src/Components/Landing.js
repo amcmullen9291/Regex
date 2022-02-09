@@ -33,11 +33,13 @@ export default function Landing() {
     console.log( "current translation value: ", translation);
     if(translation != null){
       if(enteredExpression.length < inputLength){
-        if(enteredExpression.length == 0){
-          setTranslation();
+        if(enteredExpression.length < 1 ){
+          console.log("right area");
+          setTranslation(); 
+          setInputLength();
         }else{
-        // enteredExpression = document.getElementById("inputArea").value;
-        setTranslation(translation += enteredExpression[enteredExpression.length-1]);
+          setTranslation();
+        setTranslation(translation.slice(0, -1));
         setInputLength(inputLength -= 1);
         console.log(enteredExpression);
         console.log("input length: ", inputLength);
@@ -99,8 +101,12 @@ function define (e, index){  //CharClass definitions
   }
   if(translation != null){
   setTranslation(translation + enteredExpression);
+  document.getElementById("inputArea").value = "";
+  setInputLength();
 }else{
   setTranslation(enteredExpression);
+  document.getElementById("inputArea").value ="";
+  setInputLength();
 }
 }
 
