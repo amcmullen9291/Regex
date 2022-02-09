@@ -33,9 +33,10 @@ export default function Landing() {
     console.log( "current translation value: ", translation);
     if(translation != null){
       if(enteredExpression.length < inputLength){
-        if(enteredExpression.length < 1 ){
+        if((enteredExpression.length < 1) && (enteredExpression.length > -1) ){
           console.log("right area");
-          setTranslation(); 
+          // setTranslation(); 
+          setTranslation(translation.slice(0, -1));
           setInputLength(0);
         }else{
           // setTranslation();
