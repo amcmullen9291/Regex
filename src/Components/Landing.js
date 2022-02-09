@@ -93,10 +93,12 @@ function define (e, index){  //CharClass definitions
   if(translation != null){
   setTranslation(translation + enteredExpression);
   document.getElementById("inputArea").value = "";
+  theTranslation("charClasses", index);
   setInputLength(0);
 }else{
   setTranslation(enteredExpression);
   document.getElementById("inputArea").value ="";
+  theTranslation("charClasses", index);
   setInputLength(0);
 }
 }
@@ -109,10 +111,12 @@ function define2 (e, index){  //Assertions definitions
   if(translation != null){
     setTranslation(translation + enteredExpression);
     document.getElementById("inputArea").value ="";
+    theTranslation("assertions", index);
     setInputLength(0);
   }else{
     setTranslation(enteredExpression);
     document.getElementById("inputArea").value ="";
+    theTranslation("assertions", index);
     setInputLength(0);
   }
 }
@@ -125,10 +129,12 @@ function define3 (e, index){  //quantifiers definitions
   if(translation != null){
     setTranslation(translation + enteredExpression);
     document.getElementById("inputArea").value ="";
+    theTranslation("quantifiers", index);
     setInputLength(0);
   }else{
     setTranslation(enteredExpression);
     document.getElementById("inputArea").value ="";
+    theTranslation("quantifiers", index);
     setInputLength(0);
   }
 }
@@ -136,6 +142,55 @@ function define3 (e, index){  //quantifiers definitions
 useEffect(() => {
   readInputIndexbyIndex();
 }, [translation]);
+
+function theTranslation(group, index){
+  if(group == "charClasses"){
+    switch (index) {
+      case "1":
+        console.log('that is what i want to see');
+        break;
+      case "2":
+        console.log("now case 2 is added to the explination.");
+        break;
+      case "4":
+        console.log('now case 4 is added to the explination.');
+        break;
+      default:
+        console.log(`Did not find the expression.`); //will probably leave default blank.
+    }
+  }
+  if(group == "assertions"){
+    switch (index) {
+      case "1":
+        console.log('that is what i want to see from the assertions group');
+        break;
+      case "2":
+        console.log("now case 2 is added to the explination from the assertions group.");
+        break;
+      case "3":
+        console.log('now case 3 is added to the explination from the assertions group.');
+        break;
+      default:
+        console.log(`Did not find the expression.`); //will probably leave default blank.
+    }
+  }
+  if(group == "quantifiers"){
+    switch (index) {
+      case "1":
+        console.log('that is what i want to see from the quantifiers group');
+        break;
+      case "2":
+        console.log("now case 2 is added to the explination from the quantifiers group.");
+        break;
+      case "3":
+        console.log('now case 3 is added to the explination from the quantifiers group.');
+        break;
+      default:
+        console.log(`Did not find the expression.`); //will probably leave default blank.
+    }
+  }
+
+}
 
 function readInputIndexbyIndex(){  //not needed
     if(document.getElementById("inputArea").value != null){
@@ -146,7 +201,7 @@ function readInputIndexbyIndex(){  //not needed
   return (
       <>
   <div>
-    <center><p id="headingTop">REGEX</p></center>
+    <p id="headingTop"><center>REGEX</center></p>
     <h1>Enter an Expression</h1>
   </div>
   <div id="rightSidebar">
@@ -178,7 +233,7 @@ function readInputIndexbyIndex(){  //not needed
   </center>
   <div id="bottomDiv">Click on an expression for its definition.</div>
   <div id="bottomDiv2">
-    <div id="bottomDiv2Translate">Translation goes here.</div>
+    <div id="bottomDiv2Translate">Translation goes here. Note: Regex expressions are written and read left to right!</div>
   </div>
 
   <button id="resetButton" onClick={(e) => {resetRegex(e)}}>reset</button>
