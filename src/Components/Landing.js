@@ -29,8 +29,13 @@ export default function Landing() {
   function findTranslation(e){
     e.preventDefault();
     let enteredExpression = document.getElementById("inputArea").value;
-    document.getElementById('RegexTranslated').innerHTML = enteredExpression;
-    setTranslation(enteredExpression);
+    console.log( "current translation value: ", translation);
+    if(translation != null){
+      setTranslation(translation += enteredExpression[enteredExpression.length-1]);
+    }
+    if(translation == null){
+      setTranslation(enteredExpression);
+    } 
 }
 
 function resetRegex(e){
@@ -110,7 +115,7 @@ useEffect(() => {
   readInputIndexbyIndex();
 }, [translation]);
 
-function readInputIndexbyIndex(){
+function readInputIndexbyIndex(){  //not needed
     if(document.getElementById("inputArea").value != null){
       let enteredExpression = document.getElementById("inputArea").value;
       console.log(enteredExpression[enteredExpression.length -1]);
