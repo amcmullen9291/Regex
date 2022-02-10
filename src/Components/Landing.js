@@ -48,10 +48,16 @@ export default function Landing() {
       }else{
         setTranslation(translation += enteredExpression[enteredExpression.length-1]);
         setInputLength(inputLength+=1);
+
         if(document.getElementById("bottomDiv2Translate").innerHTML !== "Translation goes here. Note: Regex expressions are written and read left to right!"){ 
           let currentCondition = document.getElementById("bottomDiv2Translate").innerHTML;
-          document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + enteredExpression[enteredExpression.length-1] + "";
-          console.log("NAME: ", enteredExpression);
+          console.log("current condition: " , currentCondition);
+          const bridge = "followed by ";
+          if( document.getElementById("bottomDiv2Translate").innerHTML.includes(bridge)){
+            document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + enteredExpression[enteredExpression.length-1] + "";
+          }else{
+              document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + bridge + enteredExpression[enteredExpression.length-1] + "";
+          }
         }
       }
     }
@@ -159,7 +165,7 @@ function define3 (e, index){  //quantifiers definitions
 
 useEffect(() => {
   readInputIndexbyIndex();
-}, [translation]);
+}, [translation, enteredExpression]);
 
 function theTranslation(group, index){
   if(group == "charClasses"){
@@ -226,7 +232,7 @@ function theTranslation(group, index){
 function readInputIndexbyIndex(){  //not needed
     if(document.getElementById("inputArea").value != null){
       let enteredExpression = document.getElementById("inputArea").value;
-      console.log(enteredExpression[enteredExpression.length -1]);
+      console.log(enteredExpression);
   }
 }
   return (
