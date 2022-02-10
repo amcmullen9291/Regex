@@ -43,15 +43,15 @@ export default function Landing() {
         setTranslation(translation.slice(0, -1));
         setInputLength(enteredExpression.length);
           let currentCondition = document.getElementById("bottomDiv2Translate").innerHTML;
-          document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition.slice(0, -2);
-          console.log("getting closer");
+          document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition.slice(0, -1);
       }
       }else{
         setTranslation(translation += enteredExpression[enteredExpression.length-1]);
         setInputLength(inputLength+=1);
         if(document.getElementById("bottomDiv2Translate").innerHTML !== "Translation goes here. Note: Regex expressions are written and read left to right!"){ 
           let currentCondition = document.getElementById("bottomDiv2Translate").innerHTML;
-          document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + " " + enteredExpression[enteredExpression.length-1];
+          document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + enteredExpression[enteredExpression.length-1] + "";
+          console.log("NAME: ", enteredExpression);
         }
       }
     }
@@ -186,8 +186,15 @@ function theTranslation(group, index){
   if(group == "assertions"){
     switch (index) {
       case "1":
-        console.log('that is what i want to see from the assertions group');
-        break;
+        if(document.getElementById("bottomDiv2Translate").innerHTML != "Translation goes here. Note: Regex expressions are written and read left to right!"){
+          let currentTranslation = document.getElementById("bottomDiv2Translate").innerHTML;
+           document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + "At the beginning of the string, "
+         }
+         if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
+            document.getElementById("bottomDiv2Translate").innerHTML = "At the beginning of the string, "
+          } 
+ 
+      break;
       case "2":
         console.log("now case 2 is added to the explination from the assertions group.");
         break;
