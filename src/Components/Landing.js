@@ -51,12 +51,11 @@ export default function Landing() {
 
         if(document.getElementById("bottomDiv2Translate").innerHTML !== "Translation goes here. Note: Regex expressions are written and read left to right!"){ 
           let currentCondition = document.getElementById("bottomDiv2Translate").innerHTML;
-          console.log("current condition: " , currentCondition);
           const bridge = "followed by ";
           if( document.getElementById("bottomDiv2Translate").innerHTML.includes(bridge)){
             document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + enteredExpression[enteredExpression.length-1] + "";
           }else{
-              if((document.getElementById("bottomDiv2Translate").innerHTML.includes("Find the first match for "))){
+              if((document.getElementById("bottomDiv2Translate").innerHTML.includes("Find the first match for ")) || (document.getElementById("bottomDiv2Translate").innerHTML.includes("Starting at the beginning of the string, look for the value "))){
                 document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + enteredExpression[enteredExpression.length-1];
               }else{
                 document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + bridge + enteredExpression[enteredExpression.length-1] + "";
@@ -201,7 +200,7 @@ function theTranslation(group, index){
            document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + "At the beginning of the string, "
          }
          if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
-            document.getElementById("bottomDiv2Translate").innerHTML = "At the beginning of the string, "
+            document.getElementById("bottomDiv2Translate").innerHTML = "Starting at the beginning of the string, look for the value "
           } 
  
       break;
