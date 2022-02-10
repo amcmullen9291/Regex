@@ -29,22 +29,39 @@ export default function Landing() {
   function findTranslation(e){
     e.preventDefault();
     let enteredExpression = document.getElementById("inputArea").value;
+    setEnteredExpression(enteredExpression);
     if(translation != null){
       if(enteredExpression.length < inputLength){
         if((enteredExpression.length < 1) && (enteredExpression.length > -1) ){
-          setTranslation(translation.slice(0, -1));
+          setTranslation(translation.slice(0, -1));   
           setInputLength(0);
+          if(document.getElementById("bottomDiv2Translate").innerHTML !== "Translation goes here. Note: Regex expressions are written and read left to right!"){ 
+            let currentCondition = document.getElementById("bottomDiv2Translate").innerHTML;
+            document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition.slice(0, -1);
+          }  
         }else{
         setTranslation(translation.slice(0, -1));
         setInputLength(enteredExpression.length);
+          let currentCondition = document.getElementById("bottomDiv2Translate").innerHTML;
+          document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition.slice(0, -2);
+          console.log("getting closer");
       }
       }else{
         setTranslation(translation += enteredExpression[enteredExpression.length-1]);
         setInputLength(inputLength+=1);
+        if(document.getElementById("bottomDiv2Translate").innerHTML !== "Translation goes here. Note: Regex expressions are written and read left to right!"){ 
+          let currentCondition = document.getElementById("bottomDiv2Translate").innerHTML;
+          document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + " " + enteredExpression[enteredExpression.length-1];
+        }
       }
     }
     if(translation == null){
       setTranslation(enteredExpression);
+      if(document.getElementById("bottomDiv2Translate").innerHTML = "Translation goes here. Note: Regex expressions are written and read left to right!"){ 
+        let currentCondition = document.getElementById("bottomDiv2Translate").innerHTML;
+        document.getElementById("bottomDiv2Translate").innerHTML =  "Find the first match for " + enteredExpression;
+      }
+
     } 
 }
 
@@ -56,6 +73,7 @@ function resetRegex(e){
   document.getElementById("repetition").disabled = false;
   document.getElementById("bottomDiv").innerHTML = " ";
   setEndOfQuerySlash("\\");
+  document.getElementById("bottomDiv2Translate").innerHTML = "Translation goes here. Note: Regex expressions are written and read left to right!";
 }
 
 function ignoreCase(e){
@@ -147,7 +165,13 @@ function theTranslation(group, index){
   if(group == "charClasses"){
     switch (index) {
       case "1":
-        console.log('that is what i want to see');
+        if(document.getElementById("bottomDiv2Translate").innerHTML != "Translation goes here. Note: Regex expressions are written and read left to right!"){
+         let currentTranslation = document.getElementById("bottomDiv2Translate").innerHTML;
+          document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + "I am looking for the first occurance of either value 'X' or value 'Y'. "
+        }
+        if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
+           document.getElementById("bottomDiv2Translate").innerHTML = "I am looking for the first occurance of either value 'X' or value 'Y'. "
+         } 
         break;
       case "2":
         console.log("now case 2 is added to the explination.");
