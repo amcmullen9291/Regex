@@ -56,14 +56,18 @@ export default function Landing() {
           if( document.getElementById("bottomDiv2Translate").innerHTML.includes(bridge)){
             document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + enteredExpression[enteredExpression.length-1] + "";
           }else{
-              document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + bridge + enteredExpression[enteredExpression.length-1] + "";
+              if((document.getElementById("bottomDiv2Translate").innerHTML.includes("Find the first match for "))){
+                document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + enteredExpression[enteredExpression.length-1];
+              }else{
+                document.getElementById("bottomDiv2Translate").innerHTML =  currentCondition + bridge + enteredExpression[enteredExpression.length-1] + "";
+            }
           }
         }
       }
     }
     if(translation == null){
       setTranslation(enteredExpression);
-      if(document.getElementById("bottomDiv2Translate").innerHTML = "Translation goes here. Note: Regex expressions are written and read left to right!"){ 
+      if((document.getElementById("bottomDiv2Translate").innerHTML = "Translation goes here. Note: Regex expressions are written and read left to right!") && (!document.getElementById("bottomDiv2Translate").innerHTML.includes("Find the first match"))){ 
         let currentCondition = document.getElementById("bottomDiv2Translate").innerHTML;
         document.getElementById("bottomDiv2Translate").innerHTML =  "Find the first match for " + enteredExpression;
       }
