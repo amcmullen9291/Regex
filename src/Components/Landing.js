@@ -8,8 +8,6 @@ export default function Landing() {
   let [ enteredExpression, setEnteredExpression ] = useState(null); // search value
   let [ inputLength, setInputLength ] = useState(1);
 
-  const global = "\\g";
-
   const charClasses = [ "", "[x|y]", "." , "", "\\d", "\\D", "", "\\n", "\\r", "\\s", "\\S", "\\t", "", "\\w", "\\W", "\\0", "[^]", "[x-y]"];
   const assertions = ["^", "$", "\\b", "\\B", "|" ]
   const quantifiers = ["*", "+", "?", "{n}", "{n,}", "{n,m}"];
