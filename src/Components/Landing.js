@@ -183,8 +183,20 @@ function theTranslation(group, index){
          } 
         break;
       case "2":
-        console.log("now case 2 is added to the explination.");
-        break;
+        if(document.getElementById("bottomDiv2Translate").innerHTML != "Translation goes here. Note: Regex expressions are written and read left to right!"){
+          let currentTranslation = document.getElementById("bottomDiv2Translate").innerHTML;
+            if(currentTranslation[currentTranslation.length-1] == "."){
+              currentTranslation = currentTranslation.slice(0,-1);
+              document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " followed by ANY character.";
+            }
+            if(currentTranslation[currentTranslation.length-1].match(/\w/)){
+              document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " followed by ANY charcter.";
+            }
+         }
+         if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
+            document.getElementById("bottomDiv2Translate").innerHTML = "Look for ANY chacracter followed by: "
+          }  
+      break;
       case "4":
         console.log('now case 4 is added to the explination.');
         break;
@@ -202,7 +214,6 @@ function theTranslation(group, index){
          if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
             document.getElementById("bottomDiv2Translate").innerHTML = "Starting at the beginning of the string, look for the value "
           } 
- 
       break;
       case "2":
         console.log("now case 2 is added to the explination from the assertions group.");
