@@ -223,7 +223,7 @@ function theTranslation(group, index){
               currentTranslation = currentTranslation.slice(0,-1);
               document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " zero or more times.";
             }
-            if(currentTranslation[currentTranslation.length-1].match(/\w/)){
+            if(currentTranslation[currentTranslation.length-1].match(/\w || \W/)){
               document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " (match '" + currentTranslation[currentTranslation.length-1] + "' zero or more times.).";
             }
          }
