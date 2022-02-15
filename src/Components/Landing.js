@@ -223,7 +223,7 @@ function theTranslation(group, index){
               currentTranslation = currentTranslation.slice(0,-1);
               document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " zero or more times.";
             }
-            if(currentTranslation[currentTranslation.length-1].match(/\w || \W/)){
+            if(currentTranslation[currentTranslation.length-1].match(/\w/)){
               document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " (match '" + currentTranslation[currentTranslation.length-1] + "' zero or more times.).";
             }
          }
@@ -232,8 +232,20 @@ function theTranslation(group, index){
           }  
       break;
       case "2":
-        console.log("now case 2 is added to the explination from the quantifiers group.");
-        break;
+        if(document.getElementById("bottomDiv2Translate").innerHTML != "Translation goes here. Note: Regex expressions are written and read left to right!"){
+          let currentTranslation = document.getElementById("bottomDiv2Translate").innerHTML;
+            if(currentTranslation[currentTranslation.length-1] == "."){
+              currentTranslation = currentTranslation.slice(0,-1);
+              document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " one or more times.";
+            }
+            if(currentTranslation[currentTranslation.length-1].match(/\w/)){
+              document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " (match '" + currentTranslation[currentTranslation.length-1] + "' one or more times.).";
+            }
+         }
+         if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
+            document.getElementById("bottomDiv2Translate").innerHTML = "Look for the first character one or more times: "
+          }  
+      break;
       case "3":
         console.log('now case 3 is added to the explination from the quantifiers group.');
         break;
