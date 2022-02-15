@@ -176,10 +176,10 @@ function theTranslation(group, index){
       case "1":
         if(document.getElementById("bottomDiv2Translate").innerHTML != "Translation goes here. Note: Regex expressions are written and read left to right!"){
          let currentTranslation = document.getElementById("bottomDiv2Translate").innerHTML;
-          document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + "I am looking for the first occurance of either value 'X' or value 'Y'. "
+          document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + "I am looking for the first occurance of either value 'X' or value 'Y'.";
         }
         if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
-           document.getElementById("bottomDiv2Translate").innerHTML = "I am looking for the first occurance of either value 'X' or value 'Y'. "
+           document.getElementById("bottomDiv2Translate").innerHTML = "I am looking for the first occurance of either value 'X' or value 'Y'."
          } 
         break;
       case "2":
@@ -197,7 +197,7 @@ function theTranslation(group, index){
       case "1":
         if(document.getElementById("bottomDiv2Translate").innerHTML != "Translation goes here. Note: Regex expressions are written and read left to right!"){
           let currentTranslation = document.getElementById("bottomDiv2Translate").innerHTML;
-           document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + "At the beginning of the string, "
+           document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + "At the beginning of this string, "
          }
          if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
             document.getElementById("bottomDiv2Translate").innerHTML = "Starting at the beginning of the string, look for the value "
@@ -217,8 +217,20 @@ function theTranslation(group, index){
   if(group == "quantifiers"){
     switch (index) {
       case "1":
-        console.log('that is what i want to see from the quantifiers group');
-        break;
+        if(document.getElementById("bottomDiv2Translate").innerHTML != "Translation goes here. Note: Regex expressions are written and read left to right!"){
+          let currentTranslation = document.getElementById("bottomDiv2Translate").innerHTML;
+            if(currentTranslation[currentTranslation.length-1] == "."){
+              currentTranslation = currentTranslation.slice(0,-1);
+              document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " zero or more times.";
+            }
+            if(currentTranslation[currentTranslation.length-1].match(/\w/)){
+              document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " (match '" + currentTranslation[currentTranslation.length-1] + "' zero or more times.).";
+            }
+         }
+         if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
+            document.getElementById("bottomDiv2Translate").innerHTML = "Look for the first character zero or more times: "
+          }  
+      break;
       case "2":
         console.log("now case 2 is added to the explination from the quantifiers group.");
         break;
