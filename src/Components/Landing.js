@@ -198,8 +198,24 @@ function theTranslation(group, index){
           }  
       break;
       case "4":
-        console.log('now case 4 is added to the explination.');
-        break;
+        if(document.getElementById("bottomDiv2Translate").innerHTML != "Translation goes here. Note: Regex expressions are written and read left to right!"){
+          let currentTranslation = document.getElementById("bottomDiv2Translate").innerHTML;
+           document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " Match any number, 0-9.";
+         }
+         if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
+            document.getElementById("bottomDiv2Translate").innerHTML = "Match any number, 0-9."
+          } 
+         break;
+         case "5":
+          if(document.getElementById("bottomDiv2Translate").innerHTML != "Translation goes here. Note: Regex expressions are written and read left to right!"){
+            let currentTranslation = document.getElementById("bottomDiv2Translate").innerHTML;
+             document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " Match the first character that is NOT a number 0-9.";
+           }
+           if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
+              document.getElementById("bottomDiv2Translate").innerHTML = "Look for the first character that is NOT a number, 0-9."
+            } 
+           break;
+  
       default:
         console.log(`Did not find the expression.`); //will probably leave default blank.
     }
@@ -236,6 +252,9 @@ function theTranslation(group, index){
             }
             if(currentTranslation[currentTranslation.length-1].match(/\w/)){
               document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " (match '" + currentTranslation[currentTranslation.length-1] + "' zero or more times.).";
+            }
+            if(currentTranslation[currentTranslation.length-1].match(/\d/)){
+              document.getElementById("bottomDiv2Translate").innerHTML = currentTranslation + " (match the last digit zero or more times).";
             }
          }
          if(document.getElementById("bottomDiv2Translate").innerHTML == "Translation goes here. Note: Regex expressions are written and read left to right!"){
